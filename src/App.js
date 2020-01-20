@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 
 import Form from "./components/Form";
+import Recipes from "./components/Recipes";
 
 const APP_ID = "145c442f";
 const APP_KEY = "fa595d2525ce712a15ee6856ae21d94c";
@@ -32,9 +33,7 @@ class App extends Component {
 				</header>
 				<Form getRecipe={this.getRecipe} />
 
-				{this.state.recipes.map(recipe => {
-					return <p key={recipe.recipe.label}>{recipe.recipe.label}</p>;
-				})}
+				<Recipes recipes={this.state.recipes} />
 			</div>
 		);
 	}
