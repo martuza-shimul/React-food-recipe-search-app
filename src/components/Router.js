@@ -1,11 +1,15 @@
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import App from "../App";
+import Recipe from "./Recipe";
 
 const Router = () => {
 	return (
 		<BrowserRouter>
-			<Route path="/" component={App} />
+			<Switch>
+				<Route exact path="/" component={App} />
+				<Route path="/recipe/:name" component={Recipe} />
+			</Switch>
 		</BrowserRouter>
 	);
 };

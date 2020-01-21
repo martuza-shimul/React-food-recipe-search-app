@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Recipes = props => {
 	return (
@@ -27,7 +28,11 @@ const Recipes = props => {
 										Source: <span>{recipe.recipe.source}</span>
 									</p>
 								</div>
-								<button className="recipe_buttons">View Recipe</button>
+								<button className="recipe_buttons">
+									<Link to={{ pathname: `/recipe/${recipe.recipe.label}` }}>
+										View Recipe
+									</Link>
+								</button>
 							</div>
 						</div>
 					);
